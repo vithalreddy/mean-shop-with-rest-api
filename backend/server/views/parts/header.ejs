@@ -1,0 +1,25 @@
+<header>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="/admin" class="btn btn-info btn-lg" style="margin: 5px;">MEAN Shop  Admin</a>
+    </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <% if(admin){ %>
+          <div>
+            <button class="btn btn-danger navbar-btn btn-lg">Hello, <%= admin.firstName+" "+admin.lastName %></button>
+          </div>
+          <li><a href="/admin" >Dashboard</a></li>
+          <li><a href="/admin/view-product" >All Products</a></li>
+          <li><a href="/admin/orders">All Orders</a></li>
+          <li><a href="http://localhost:5000" target="_blank">Frontend</a></li>
+          <li><a href="/admin/logout">Logout</a></li>
+        <% } else{ %>
+          <li><a href="/admin/login">Login</a></li>
+          <li><a href="/admin/signup">Sign Up</a></li>
+        <% } %>
+      </ul>
+    </div>
+  </nav>
+</header>

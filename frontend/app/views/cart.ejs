@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ./parts/head.ejs %>
+</head>
+<body>
+  <% include ./parts/header.ejs %>
+
+  <main>
+    <div class="container-fluid">
+      <div class="space"></div>
+      <div class="panel panel-primary" style="opacity: 0.8; background-color: cyan;">
+        <div class="panel-heading">
+          <h3>Shopping Cart</h3>
+        </div>
+        <% if(!cart || cart.empty){ %>
+          <div class="panel-body">
+            <p>Your Cart Is Empty.<br>
+            Do Some Shoping and Comeback.</p>
+          </div>
+        <% } else{%>
+          <div class="panel-body">
+            <div  style="text-align:left;">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <td><b>Product Name</b></td>
+                    <td><b>Price Per Item</b></td>
+                    <td><b>Quantity</b></td>
+                    <td><b>Price</b></td>
+                    <td><b>Remove</b></td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% for(id in cart.items){ %>
+                    <tr>
+                      <td><%= cart.items[id].item.productName %></td>
+                      <td>Rs. <%= cart.items[id].item.price %></td>
+                      <td>
+                        <a class="btn btn-danger btn-lg" href="/product/deleteOne-from-cart/<%= id %>"><b>-</b></a>
+                        &nbsp;<%= cart.items[id].quantity %>&nbsp;
+                        <a class="btn btn-success btn-lg" href="/product/addOne-to-cart/<%= id %>"><b>+</b></a>
+                      </td>
+                      <td>Rs. <%= cart.items[id].price %></td>
+                      <td><a class="btn btn-danger btn-lg" href="/product/delete-from-cart/<%= id %>">X</a></td>
+                    </tr>
+                  <% } %>
+                </tbody>
+              </table>
+            </div>
+            <div class="line"></div>
+            <div style="text-align:right;">
+              <p class="tProd">Total Products : <b><%= cart.totalQuantity %></b></br>
+              Total Price : <b>Rs. <%= cart.totalPrice %></b></p>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <a class="btn btn-danger btn-lg" href="/cart/empty">Empty Cart</a>
+            <a class="btn btn-info btn-lg" href="/checkout/confirm-address">Checkout</a>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </main>
+
+  <% include ./parts/footer.ejs %>
+</body>
+</html>

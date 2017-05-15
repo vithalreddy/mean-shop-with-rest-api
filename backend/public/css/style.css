@@ -1,0 +1,153 @@
+body{
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 16px;
+  text-align: center;
+  align-items: center;
+  background-image: url('../pics/mean-bg.jpg');
+  /*background-attachment: fixed;*/
+  /*background-position: center;*/
+}
+
+.footer {
+    background-color: #292c2f;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    font: normal 18px sans-serif;
+    padding: 45px;
+    margin-top: 50px;
+    border-top: 5px solid red;
+}
+
+.footer .footer-motto {
+    color: #8d9093;
+    font-size: 24px;
+    margin: 0;
+}
+
+.footer .footer-name {
+    color: cyan;
+    font-size: 14px;
+    margin: 0;
+}
+
+.footer .footer-links {
+    list-style: none;
+    font-weight: bold;
+    color: cyan;
+    padding: 35px 0 23px;
+    margin: 0;
+}
+
+.footer .footer-links a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.panel-primary{
+  box-shadow: 0 0 20px red;
+}
+
+.login-screen{
+  background-color: #cccccc;
+
+}
+
+.login-box{
+  margin: auto;
+  margin-top: 3%;
+  width: 50%;
+  border: 2px solid cyan;
+  border-radius: 10px;
+  background-color: #19B5FE;
+}
+
+.login-form,
+.product-form{
+  width: 90%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.input-block{
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+.input-block p{
+  text-align: center;
+  font-weight: bold;
+}
+
+.input-icon{
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  color: #8b9199;
+  background-color: #ffffff;
+}
+
+.input-box{
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  width: 75%;
+  border: 0;
+  background-color: #ffffff;
+  box-shadow: none;
+}
+
+
+
+main{
+  margin: 10px 0 10px 0;
+}
+.heading2{
+  display: block;
+  min-height: 45px;
+  padding: 5px;
+  margin: 20px;
+  background-color: #337AB7;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: white;
+}
+.heading2:hover{
+  background-color: #292C2F;
+
+}
+
+
+.product-details-box{
+  margin: auto;
+  margin-top: 20px;
+  width: 70%;
+  border: 2px solid cyan;
+  border-radius: 10px;
+  background-color: #19B5FE;
+}
+
+
+
+.details{
+  text-align: left;
+  margin: 10px 25px 10px 25px;
+}
+
+.tProd{
+  display: inline-block;
+  margin: 5px;
+  border: 2px solid brown;
+  font-weight: bold;
+  text-align: right;
+  padding: 5px;
+}
+
+.panel-primary:hover{
+  box-shadow: 0 0 30px green;
+}

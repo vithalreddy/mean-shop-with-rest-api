@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include ./parts/head.ejs %>
+</head>
+
+<body>
+  <% include ./parts/header.ejs %>
+
+    <main>
+      <div class="container-fluid">
+        <div class="row">
+
+          <div class="panel panel-primary" style="margin-left:10%;margin-right:10%;">
+            <div class="panel-heading">
+              <h2>Product Name: <%= product.productName %></h2>
+            </div>
+            <hr>
+            <div class="panel-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-sm-10">
+                    <div class="table-responsive">
+                      <table class="table table-bordered ">
+                        <thead>
+                          <tr>
+                            <th class="text-center">
+                              Product Image
+                            </th>
+                            <th class="text-center">
+                              Product Details
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <img class="img-responsive pImg" src="/pics/no-pic.png" alt="Product Image">
+                            </td>
+                            <td>
+                              <div class="panel-body">
+                                <ul>
+                                  <li class="boxFl">Product:
+                                    <%= product.productName %>
+                                  </li>
+                                  <li class="boxFl">Price : Rs.
+                                    <%= product.price %>
+                                  </li>
+                                  <li class="boxFl">Cash On Delivery<span style="color: green;"> eligible.</span></li>
+                                  <% if(product.quantity >= 1){ %>
+                                    <li style="color:#196619;" class="boxFl">In Stock</li>
+                                    <% } else{ %>
+                                      <li style="color:#196619;" class="boxFl">Out Of Stock</li>
+                                </ul>
+                                <% } %>
+                                  <hr>
+                                  <a class="btn btn-info btn-lg" href="/product/add-to-cart/<%= product.id %>">Add To Cart</a>
+                                  <a class="btn btn-danger btn-lg" href="/cart">Go To Cart</a>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="2">
+                              <h3 class="boxFl" style="text-align: center">Product Description</h3><br>
+                              <ul>
+                                <li class="boxFl">Category :
+                                  <%= product.category %>
+                                </li>
+                                <li class="boxFl"> Description :
+                                  <%= product.description %>
+                                </li>
+                                <li class="boxFl">Model :
+                                  <%= product.model %>
+                                </li>
+                                <li class="boxFl">Brand Name :
+                                  <%= product.brandName %>
+                                </li>
+                                <li class="boxFl">Size :
+                                  <%= product.size %>
+                                </li>
+                                <li class="boxFl">Reviews : No Revies yet.</li>
+                              </ul>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <% include ./parts/footer.ejs %>
+</body>
+
+</html>

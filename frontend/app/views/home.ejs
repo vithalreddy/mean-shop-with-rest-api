@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ./parts/head.ejs %>
+</head>
+<body>
+  <% include ./parts/header.ejs %>
+  <main>
+  <div class="panel panel-primary" style="margin-left:10%;margin-right:10%;">
+<div class="panel-heading">
+  <h3>Wel Come to MEAN shop, Your Favourite Online Shopping Destination!</h3>
+</div></div>
+<hr><br>
+
+    <div class="container-fluid">
+      <% if(count){ %>
+        <div class="row">
+          <% for(i=0;i<count;i++){ %>
+            <div class="col-sm-4">
+              <div class="panel panel-primary" style="opacity: 0.9;">
+                <div class="panel-heading"><h3>Product Name: <%= product[i].productName %></h3></div>
+                <div class="panel-body">
+<img class="img-responsive center-block" src="/pics/no-pic.png" alt="Product Image" style="width: 2000px; height: 130px">
+<hr>
+                  <table class="table table-bordered table-striped table-hover table-condensed table-responsive">
+ <thead>
+   <tr>
+     <th colspan="2" class="text-center">
+       [Product Details]
+     </th>
+   </tr>
+ </thead>
+ <tbody>
+                  <tr><td>Category :  </td><td><%= product[i].category %></td></tr>
+                  <tr><td>Price : </td><td> Rs. <%= product[i].price %></td></tr>
+                  <tr><td>Size : </td><td> <%= product[i].size %></td></tr>
+                  <tr><td>Brand Name : </td><td><%= product[i].brandName %></td></tr>
+                  <tr><td>Reviews : </td><td>No Reviews Yet</td></tr>
+
+                </tbody>
+</table>
+                </div>
+                <div class="panel-footer">
+                    <a class="btn btn-info btn-lg" href="/product/single-product/<%= product[i]._id %>">View</a>
+                    <a class="btn btn-danger btn-lg" href="/product/add-to-cart/<%= product[i]._id %>">Add To Cart</a>
+                    <a class="btn btn-success btn-lg" href="/cart">Go To Cart</a>
+
+                </div>
+              </div>
+            </div>
+          <% } %>
+        </div>
+      <% } else{ %>
+        <p>TaDa.........  No products available or added yet.<br>
+        Please Visit Later.....</p>
+      <% } %>
+  </main>
+
+  <% include ./parts/footer.ejs %>
+</body>
+</html>

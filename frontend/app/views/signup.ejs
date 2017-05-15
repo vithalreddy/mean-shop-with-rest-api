@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ./parts/head.ejs %>
+</head>
+<body>
+  <% include ./parts/header.ejs %>
+
+  <main>
+    <div class="login-box">
+      <br>
+         <p><b>Sign Up to MEAN Shop Account</b></p>
+         <br>
+         <span class="input-icon" ><i class="icon_profile"></i></span><hr>
+               <form class="signup-form" action="/user/api/v1/newuser/create" method="post">
+        <div class="input-block">
+          <p>First Name:</p>
+          <input class="input-box" type="text" name="firstName" placeholder="First Name" autofocus required/>
+        </div>
+        <div class="input-block">
+          <p>Last Name:</p>
+          <input class="input-box" type="text" name="lastName" placeholder="Last Name" required/>
+        </div>
+        <div class="input-block">
+          <p>Email:</p>
+          <input class="input-box" type="email" name="email" placeholder="Email" required/>
+        </div>
+        <div class="input-block">
+          <p>Password:</p>
+          <input class="input-box" type="password" name="password" placeholder="Password" required/>
+        </div>
+        <div class="input-block">
+          <p>Security Question:</p>
+          <select class="input-box" name="secureQuestion">
+            <option value="Which is your favourite place?">Which is your favourite place?</option>
+            <option value="What is your nick name?">What is your nick name?</option>
+            <option value="What is your best friend name?">What is your best friend name?</option>
+            <option value="Which is your favourite color?">Which is your favourite color?</option>
+            <option value="Which is your favourite food?">Which is your favourite food?</option>
+          </select>
+        </div>
+        <div class="input-block">
+          <p>Security Answer:</p>
+          <input class="input-box" type="text" name="secureAnswer" placeholder="Security Answer" required/>
+        </div>
+        <div class="input-block">
+          <p>Contact:</p>
+          <input class="input-box" type="number" name="contact" placeholder="Contact" required/>
+        </div>
+        <div class="input-block">
+          <p>House Number:</p>
+          <input class="input-box" type="text" name="houseNo" placeholder="House Number" required/>
+        </div>
+        <div class="input-block">
+          <p>City:</p>
+          <input class="input-box" type="text" name="city" placeholder="City" required/>
+        </div>
+        <div class="input-block">
+          <p>State:</p>
+          <input class="input-box" type="text" name="state" placeholder="State" required/>
+        </div>
+        <div class="input-block">
+          <p>Country:</p>
+          <input class="input-box" type="text" name="country" placeholder="Country" required/>
+        </div>
+        <div class="input-block">
+          <p>Pin Code:</p>
+          <input class="input-box" type="text" name="pinCode" placeholder="Pin Code" required/>
+        </div>
+        <div class="input-block">
+          <p>Land Mark:</p>
+          <input class="input-box" type="text" name="landMark" placeholder="Land Mark" required/>
+        </div><br>
+        <button class="btn btn-primary btn-block" type="submit" name="submit">Signup</button><br>
+        <p><b>Have an account?</b> </p>
+        <a href="/user/login"  class="btn btn-danger btn-md btn-block"><b>Log In Here</b></a><br>
+      </form>
+    </div>
+  </main>
+
+  <% include ./parts/footer.ejs %>
+</body>
+</html>

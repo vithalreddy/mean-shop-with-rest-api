@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ./parts/head.ejs %>
+</head>
+<body>
+  <% include ./parts/header.ejs %>
+
+  <main>
+    <div class="container-fluid">
+      <div class="row checkout-box">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-5 address-box">
+          <h3>Delivery Address</h3><br>
+          <form id="ad-form" class="address-form" action="/checkout/proceed" method="post">
+            <div class="input-block">
+              <p>Mobile No.:</p>
+              <input class="input-box" type="number" name="contact" value="<%= user.contact %>" required/>
+            </div>
+            <div class="input-block">
+              <p>House Number:</p>
+              <input class="input-box" type="text" name="houseNo" value="<%= user.houseNo %>" required/>
+            </div>
+            <div class="input-block">
+              <p>City:</p>
+              <input class="input-box" type="text" name="city" value="<%= user.city %>" required/>
+            </div>
+            <div class="input-block">
+              <p>State:</p>
+              <input class="input-box" type="text" name="state" value="<%= user.state %>" required/>
+            </div>
+            <div class="input-block">
+              <p>Country:</p>
+              <input class="input-box" type="text" name="country" value="<%= user.country %>" required/>
+            </div>
+            <div class="input-block">
+              <p>Pin Code:</p>
+              <input class="input-box" type="text" name="pinCode" value="<%= user.pinCode %>" required/>
+            </div>
+            <div class="input-block">
+              <p>Land Mark:</p>
+              <input class="input-box" type="text" name="landMark" value="<%= user.landMark %>" required/>
+            </div><br>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-4">
+          <br><br>
+          <div class="tProd">
+          <h3 class="tProd">Total Products :  <%= cart.totalQuantity %></h3>
+          <h3 class="tProd">Total Amount : <%= cart.totalPrice %></h3>
+          <p class="tProd">Payment Options : Cash On Delivery</br>
+          Only COD available at the moment.or Contact us for Bank Details</p><br>
+            </div>
+          <button class="btn btn-danger btn-block" type="submit" onclick="document.getElementById('ad-form').submit();">Proceed</button><br>
+          </form>
+        </div>
+        <div class="col-sm-1"></div>
+      </div>
+    </div>
+  </main>
+
+  <% include ./parts/footer.ejs %>
+</body>
+</html>

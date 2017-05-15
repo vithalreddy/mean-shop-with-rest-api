@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ./parts/head.ejs %>
+</head>
+<body>
+  <% include ./parts/header.ejs %>
+
+  <main>
+    <div class="container-fluid">
+      <div class="login-box">
+        <h3>User Settings</h3><br>
+        <hr>
+        <div class="show-fullname">
+          <h2><b>Name : <%= user.firstName %> <%= user.lastName %></b></h2>
+        </div><br>
+        <div class="show-email">
+          <form class="details-form" action="/user/account/modify/<%= user.userId %>" method="post">
+            <input type="hidden" name="_method" value="put">
+            <div class="input-block">
+              <p>Email:</p>
+              <input class="input-box" type="email" name="email" value="<%= user.email %>" required>
+            </div>
+            <button class="btn btn-danger btn-block" type="submit" name="submit">Modify</button>
+          </form>
+        </div><br>
+        <div class="show-contact">
+          <form class="details-form" action="/user/account/modify/<%= user.userId %>" method="post">
+            <input type="hidden" name="_method" value="put">
+            <div class="input-block">
+              <p>Contact:</p>
+              <input class="input-box" type="number" name="contact" value="<%= user.contact %>" required>
+            </div>
+            <button class="btn btn-danger btn-block" type="submit" name="submit">Modify</button>
+          </form>
+        </div><br>
+        <div class="line"></div><br>
+        <div class="change-password">
+          <h4>Change Password:</h4>
+          <form class="details-form" action="/user/change/password/<%= user.userId %>" method="post">
+            <input type="hidden" name="_method" value="put">
+            <div class="input-block">
+              <p>Old Password:</p>
+              <input class="input-box" type="password" name="oldPassword" placeholder="Old Password" required>
+            </div>
+            <div class="input-block">
+              <p>New Password:</p>
+              <input class="input-box" type="password" name="password" placeholder="New Password" required>
+            </div>
+            <button class="btn btn-danger btn-block" type="submit" name="submit">Change</button>
+          </form>
+        </div><br>
+        <div class="line"></div><br>
+        <div class="delete-account">
+          <h4>Delete Account:</h4><br>
+          <form class="details-form" action="/user/account/delete/<%= user.userId %>" method="post">
+            <button class="btn btn-danger btn-block" type="submit" name="submit">Delete</button>
+          </form><br>
+          <p class="alert alert-danger" style="width:80%;margin:auto;">Account once deleted is not recoverable. Be carefull!!!.</p>
+        </div><br>
+      </div>
+    </div>
+  </main>
+
+  <% include ./parts/footer.ejs %>
+</body>
+</html>

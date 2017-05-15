@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ./parts/head.ejs %>
+</head>
+<body>
+  <% include ./parts/header.ejs %>
+
+  <main>
+    <div class="panel panel-primary">
+    <div class="panel-heading"> <h2>Your Store Notifications</h2></div>
+     <div class="panel-body " style="background-color: cyan">
+  <a  class="btn btn-danger btn-lg"> <%= msg %></a><hr>
+  <a  class="btn btn-danger btn-lg"> <%= status %></a><hr>
+  <a  class="btn btn-danger btn-lg"> <%= error %> </a><hr>
+   </div>
+   </div>
+  </main>
+
+  <% include ./parts/footer.ejs %>
+</body>
+</html>

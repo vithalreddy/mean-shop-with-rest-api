@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html
+<head>
+  <% include ./parts/head.ejs %>
+</head>
+
+<body>
+  <% include ./parts/header.ejs %>
+
+    <main>
+      <% include ./parts/topbar.ejs %>
+
+        <div class="container-fluid">
+          <h2 class="heading2">All Products</h2>
+          <% if(count){ %>
+            <div class="row">
+              <% for(i=0;i<count;i++){ %>
+                <div class="col-sm-6">
+                  <div class="panel panel-primary">
+                    <div class="panel-heading">
+                      <h3>Product Name: <%= product[i].productName %></h4></div>
+                <div class="panel-body">
+                    <table class="table table-bordered table-striped table-hover table-condensed table-responsive">
+	<thead>
+		<tr>
+			<th colspan="2" class="text-center">
+				[Product Details]
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+Category :
+</td>
+			<td>
+				 <%= product[i].category %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Price :
+			</td>
+			<td>
+				 <%= product[i].price %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+Description : </td>
+			<td>
+				<%= product[i].description %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+Quantity :			</td>
+			<td>
+ <%= product[i].quantity %>			</td>
+		</tr>
+	</tbody>
+</table>
+                </div>
+                <div class="panel-footer">
+                    <a class="btn btn-success btn-lg" href="/admin/view-product/single/<%= product[i]._id %>">View</a>
+                    <a class="btn btn-info btn-lg" href="/admin/edit-product/<%= product[i]._id %>">Edit</a>
+                    <form id="del-form<%= i %>" class="top-margin" action="/admin/api/v1/product/delete/<%= product[i]._id %>" method="post">
+                      <a class="btn btn-danger btn-lg" onclick="document.getElementById('del-form<%= i %>').submit();">Delete</a>
+                    </form>
+                </div>
+              </div>
+            </div>
+          <% } %>
+        </div>
+      <% } else{ %>
+        <p>No Data Found. Please Create Product.</p>
+      <% } %>
+    </div>
+
+  </main>
+
+  <% include ./parts/footer.ejs %>
+</body>
+</html>

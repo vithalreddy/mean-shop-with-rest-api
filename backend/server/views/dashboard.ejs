@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ./parts/head.ejs %>
+</head>
+<body>
+  <% include ./parts/header.ejs %>
+  <main>
+    <!-- inventory -->
+    <% include ./parts/topbar.ejs %>
+    <!--store details  -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="panel panel-primary" style="opacity: 0.7;">
+          <div class="panel-heading"> <h3>Total Registered Users</h3></div>
+           <div class="panel-body " style="background-color: cyan; ">
+        <a  class="btn btn-danger btn-lg"><%= totalUser %></a><hr>
+         </div>
+         </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="panel panel-primary" style="opacity: 0.7;">
+          <div class="panel-heading"> <h3>All Products</h3></div>
+           <div class="panel-body " style="background-color: cyan">
+        <a  class="btn btn-danger btn-lg"><%= totalProduct %></a><hr>
+         </div>
+         </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="panel panel-primary" style="opacity: 0.7;">
+          <div class="panel-heading"> <h3>All Orders </h3></div>
+           <div class="panel-body " style="background-color: cyan">
+        <a  class="btn btn-danger btn-lg"><%= totalOrder %></a><hr>
+         </div>
+         </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="panel panel-primary" style="opacity: 0.7;">
+          <div class="panel-heading"> <h3>Pending Orders</h3></div>
+           <div class="panel-body " style="background-color: cyan">
+        <a  class="btn btn-danger btn-lg"><%= pendingOrder %></a><hr>
+         </div>
+         </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </main>
+
+  <% include ./parts/footer.ejs %>
+</body>
+</html>

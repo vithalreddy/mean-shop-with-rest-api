@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ./parts/head.ejs %>
+</head>
+<body>
+  <% include ./parts/header.ejs %>
+
+  <main>
+    <% include ./parts/topbar.ejs %>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="heading2">Product Details</h3><br>
+          <div class="panel panel-primary">
+            <% if(product != null){ %>
+          <div class="panel-heading"> <h3>Product Name : <%= product.productName %></h3></div>
+           <div class="panel-body">
+             <table class="table table-bordered table-striped table-hover table-condensed table-responsive">
+ <thead>
+ <tr>
+ <th colspan="2" class="text-center">
+ [Product Details]
+ </th>
+ </tr>
+ </thead>
+ <tbody>
+   <tr> <td>Product Name : </td><td><%= product.productName %> </td></tr>
+          <tr> <td>   Category : </td><td><%= product.category %></td></tr>
+        <tr> <td>     Price :</td><td> <%= product.price %></td></tr>
+        <tr> <td>     Description : </td><td><%= product.description %></td></tr>
+        <tr> <td>     Quantity : </td><td><%= product.quantity %></td></tr>
+          <tr> <td>   Model : </td><td><%= product.model %></td></tr>
+          <tr> <td>   BrandName : </td><td><%= product.brandName %></td></tr>
+        <tr> <td>     Size : </td><td><%= product.size %></td></tr>
+            <tr> <td> Created On : </td><td><%= product.createdOn %></td></tr>
+          <tr> <td>   Updated On : </td><td><%= product.updatedOn %></td></tr>
+           </tbody>
+          </table>
+
+         </div>
+         <% } else{%>
+           <div class="panel panel-primary" style="opacity: 0.9;">
+           <div class="panel-heading"> <h3>Total Registered Users</h3></div>
+            <div class="panel-body " style="background-color: cyan; ">
+              <p>404! Product Not Found...... Or Maybe Removed  by seller.</p><br>
+            </div>
+          </div>
+        </div>
+            <% } %>
+          </div>
+        </div>
+  </main>
+
+  <% include ./parts/footer.ejs %>
+</body>
+</html>

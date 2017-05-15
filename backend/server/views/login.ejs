@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ./parts/head.ejs %>
+</head>
+<body class="login-screen">
+  <header>
+    <nav class="nav navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">MEAN Shop  Admin</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/admin/login">Login</a></li>
+            <li><a href="/admin/signup">Sign Up</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="login-box">
+      <br>
+    <p><b>Sign In to Admin Account</b></p>
+    <br>
+      <form class="login-form" action="/admin/api/v1/login" method="post">
+        <span class="input-icon" ><i class="icon_profile"></i></span><hr>
+        <div class="input-block">
+          <input class="input-box" type="text" name="username" placeholder="Username" autofocus required/>
+        </div>
+        <div class="input-block">
+          <input class="input-box" type="password" name="password" placeholder="Password" required/>
+        </div><br>
+        <button class="btn btn-success btn-md btn-block" type="submit" name="submit"><b>Login</b></button><br>
+        <p><b>Don't have an account?</b> </p>
+        <a href="/admin/signup"  class="btn btn-danger btn-md btn-block"><b>Sign Up Here</b></a><br>
+      </form>
+
+    </div>
+  </main>
+  <% include ./parts/footer.ejs %>
+
+</body>
+</html>

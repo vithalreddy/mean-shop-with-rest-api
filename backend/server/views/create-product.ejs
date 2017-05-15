@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ./parts/head.ejs %>
+</head>
+<body>
+  <% include ./parts/header.ejs %>
+
+  <main>
+    <% include ./parts/topbar.ejs %>
+    <div class="product-details-box">
+      <span><h3>New Product Details</h3></span><br>
+      <hr>
+      <form class="product-form" action="/admin/api/v1/product/create" method="post">
+        <div class="input-block">
+          <p >Product Name:</p>
+          <input class="input-box" type="text" name="productName" placeholder="Product Name" autofocus required/>
+        </div>
+        <div class="input-block">
+          <p>Category:</p>
+          <input class="input-box" type="text" name="category" placeholder="Category" required/>
+        </div>
+        <div class="input-block">
+          <p>Price:</p>
+          <input class="input-box" type="number" name="price" placeholder="Price" required/>
+        </div>
+        <div class="input-block">
+          <p>Description:</p>
+          <textarea class="input-box" name="description" placeholder="Description" rows="2" cols="80" required></textarea>
+        </div>
+        <div class="input-block">
+          <p>Quantity:</p>
+          <input class="input-box" type="number" name="quantity" placeholder="Quantity" required/>
+        </div>
+        <div class="input-block">
+          <p>Model:</p>
+          <input class="input-box" type="text" name="model" placeholder="Model" required/>
+        </div>
+        <div class="input-block">
+          <p>Brand Name:</p>
+          <input class="input-box" type="text" name="brandName" placeholder="Brand Name" required/>
+        </div>
+        <div class="input-block">
+          <p>Size:</p>
+          <input class="input-box" type="text" name="size" placeholder="Size" required/>
+        </div><br>
+        <button class="btn btn-primary btn-block" type="submit" name="submit">Submit</button><br>
+      </form>
+    </div>
+  </main>
+
+  <% include ./parts/footer.ejs %>
+</body>
+</html>
