@@ -9,10 +9,12 @@ var adminModel = mongoose.model('admin');
 
 module.exports.controller = function(app){
 
-  router.get("/signup",  function(req,res){
+  router.get("/signup", function(req,res){
     res.render('signup',
                 {
                   title:"New Admin Account Signup",
+                  admin:req.session.admin
+
                 });
   });
 
@@ -43,7 +45,7 @@ module.exports.controller = function(app){
                       error:err,
                     });
       }
-      else if(result === undefined || result === null || result === ""){
+      else if(result == undefined || result == null || result == ""){
         res.render('message',
                     {
                       title:"Admin  account signup failed",
@@ -53,8 +55,12 @@ module.exports.controller = function(app){
                     });
       }
       else{
-        res.redirect('/');
-        //res.send(result);
+        req.admin = result;
+        delete req.admin.password;
+        req.session.admin = result;
+        delete req.session.admin.password;
+        res.redirect('/admin');
+
 
       }
     });

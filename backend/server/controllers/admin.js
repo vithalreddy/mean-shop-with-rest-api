@@ -46,34 +46,6 @@ module.exports.controller = function(app){
   });
 
 
-  router.post("/signup",function(req,res){
-
-//using js date function
-    var today = Date.now();
-
-    var newAdmin = new adminModel({
-
-      username : req.body.username,
-      firstName : req.body.firstName,
-      lastName : req.body.lastName,
-      email       : req.body.email,
-      password : req.body.password,
-      createdOn : today
-
-    });
-    //admin save to mongodb
-    newAdmin.save(function(err,result){
-      if(err){
-        res.send("error :(");
-      }
-      else if(result === null || result === undefined || result === ""){
-        res.send("Admin Signup failed");
-      }
-      else{
-        res.send(result);
-      }
-    });
-  });
 
 
   app.use("/admin",router);
